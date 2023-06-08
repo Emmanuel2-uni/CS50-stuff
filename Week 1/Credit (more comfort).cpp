@@ -71,22 +71,33 @@ int get_checksum()
 		// Debug line below for following the digit place.
 		// std::cout << "\n\nDigit " << digit_place << " :" << digit;
 		
+		// As detailed in the problem set's webpage, the first step is to determine the number in every other digit starting from the right.
+		// Example: 4003600000000014
+		// Every other number from right to left: 1 0 0 0 0 6 0 4
 		
 		// Read from right to left, where the rightmost digit is the first digit; using modulo operation to determine if the digit's place is even.
 		if ((digit_place%2)==0)
 		{
+			// If it is found that it the digit's place is even, we multiply that specific digit by 2 as per the mentioned algorithm.
 			digit_product = digit*2;
 			
+			// Debug line for checking digit place and current number.
 			// std::cout << "\nCurrent digit product: " << digit_product;
 			
 			do
 			{	
+				
+				// After multiplying the digit by 2, we then add the digits of the product.
+				// Example: 6 * 2 = 12
+				// Therefore we add 1 + 2 = 3.
+				// Using modulo we can determine the first and second digits of the product. 12 % 10 = 2 and 1 % 10 = 1.
+				// We divide by 10 in order to remove the right most digit. 12/10 = 1  then 1/10 = 0.
 				checksum_product += (digit_product % 10);
 				
 				// Remove comment from the cout below to debug checksum products;
 				// std::cout << "\nAdding " << digit_product % 10 << " from " << digit_product;
 				// std::cout << "\nCurrent Checksum: " << checksum_product;
-				
+			
 				digit_product = digit_product / 10;
 				
 			}while(digit_product!=0);
