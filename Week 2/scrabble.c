@@ -3,8 +3,11 @@
 #include <stdio.h>
 #include <string.h>
 
-// Points assigned to each letter of the alphabet
+// Points assigned to each letter of the alphabet, provided by CS50
 int POINTS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
+
+// Since the course already provided the points, we just need to make another array that contains the original alphabet.
+// The indexes already match; A being 0 correspond to 1 point (POINTS[0]), Z being 25 correspond to 10 points (POINTS[25]).
 char orig_alphabet[] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
 
 int compute_score(char word[]);
