@@ -43,11 +43,11 @@ int main(void)
     if (score1 > score2)
     {
     	printf("\nPlayer 1 wins with a score of %i", score1);
-	}
-	else if (score2 > score1)
-	{
-		printf("\nPlayer 2 wins with a score of %i", score2);
-	}
+    }
+    else if (score2 > score1)
+    {
+	printf("\nPlayer 2 wins with a score of %i", score2);
+    }
 	
 	
 }
